@@ -125,7 +125,7 @@ h1.logo {
   font-size: 0;
   width: 250px;
   height: 60px;
-  background: url(/images/logo.png) center no-repeat;
+  background: url(../images/logo.png) center no-repeat;
   position: absolute;
   top: 2px;
   left: 10px;
@@ -190,7 +190,7 @@ aside {
   .headerBackground .videoWrap {
     height: 600px;
     overflow: hidden;
-    background: url(/images/bg.jpg) center no-repeat;
+    background: url(../images/bg.jpg) center no-repeat;
     background-size: cover; }
     .headerBackground .videoWrap video {
       position: relative;
@@ -319,15 +319,15 @@ nav ul {
     background-repeat: no-repeat;
     background-position: top center; }
     .contentBox.shadow.shadow1 {
-      background-image: url(/images/bg1.png); }
+      background-image: url(../images/bg1.png); }
     .contentBox.shadow.shadow2 {
-      background-image: url(/images/bg2.png); }
+      background-image: url(../images/bg2.png); }
     .contentBox.shadow.shadow3 {
-      background-image: url(/images/bg3.png); }
+      background-image: url(../images/bg3.png); }
     .contentBox.shadow.shadow4 {
-      background-image: url(/images/bg4.png); }
+      background-image: url(../images/bg4.png); }
     .contentBox.shadow.shadow5 {
-      background-image: url(/images/bg5.png); }
+      background-image: url(../images/bg5.png); }
   .contentBox.orangeBox {
     background-color: #ee672f; }
   .contentBox.blueBox {
@@ -346,11 +346,11 @@ nav ul {
     background-color: #9dca56; }
   .contentBox.main1 {
     padding: 0;
-    background-image: url(/images/main1.jpg) !important;
+    background-image: url(../images/main1.jpg) !important;
     background-position: bottom center;
     background-repeat: no-repeat; }
     .contentBox.main1 > div {
-      background: url(/images/bg5.png) top center no-repeat; }
+      background: url(../images/bg5.png) top center no-repeat; }
       .contentBox.main1 > div p {
         text-align: left; }
   .contentBox .box4 {
@@ -371,13 +371,13 @@ nav ul {
     overflow: hidden;
     position: relative; }
     .contentBox .box4.ecommerce {
-      background-image: url(/images/ecommerce.jpg); }
+      background-image: url(../images/ecommerce.jpg); }
     .contentBox .box4.magento {
-      background-image: url(/images/magento.jpg); }
+      background-image: url(../images/magento.jpg); }
     .contentBox .box4.web {
-      background-image: url(/images/web.jpg); }
+      background-image: url(../images/web.jpg); }
     .contentBox .box4.mobile {
-      background-image: url(/images/mobile.jpg); }
+      background-image: url(../images/mobile.jpg); }
     .contentBox .box4:after, .contentBox .box4:before {
       content: '';
       position: absolute;
@@ -407,31 +407,31 @@ nav ul {
     .contentBox #projects .fill {
       min-height: 600px; }
       .contentBox #projects .fill.project1 {
-        background-image: url(/images/project1.jpg);
+        background-image: url(../images/project1.jpg);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         opacity: .5; }
       .contentBox #projects .fill.project2 {
-        background-image: url(/images/project2.jpg);
+        background-image: url(../images/project2.jpg);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         opacity: .5; }
       .contentBox #projects .fill.project3 {
-        background-image: url(/images/project3.jpg);
+        background-image: url(../images/project3.jpg);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         opacity: .5; }
       .contentBox #projects .fill.project4 {
-        background-image: url(/images/project4.jpg);
+        background-image: url(../images/project4.jpg);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         opacity: .5; }
       .contentBox #projects .fill.project5 {
-        background-image: url(/images/project5.jpg);
+        background-image: url(../images/project5.jpg);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
