@@ -100,11 +100,11 @@
 
 @font-face {
   font-family: 'Oswaldlight';
-  src: url("/fonts/oswald-light.eot"), url("/fonts/oswald-light.eot?#iefix") format("embedded-opentype"), url("/fonts/oswald-light.woff") format("woff"), url("/fonts/oswald-light.ttf") format("truetype"), url("/fonts/oswald-light.svg#svgFontName") format("svg"); }
+  src: url("../fonts/oswald-light.eot"), url("../fonts/oswald-light.eot?#iefix") format("embedded-opentype"), url("../fonts/oswald-light.woff") format("woff"), url("../fonts/oswald-light.ttf") format("truetype"), url("../fonts/oswald-light.svg#svgFontName") format("svg"); }
 
 @font-face {
   font-family: 'Oswald';
-  src: url("/fonts/oswald-regular.eot"), url("/fonts/oswald-regular.eot?#iefix") format("embedded-opentype"), url("/fonts/oswald-regular.woff") format("woff"), url("/fonts/oswald-regular.ttf") format("truetype"), url("/fonts/oswald-light.svg#svgFontName") format("svg"); }
+  src: url("../fonts/oswald-regular.eot"), url("../fonts/oswald-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/oswald-regular.woff") format("woff"), url("../fonts/oswald-regular.ttf") format("truetype"), url("../fonts/oswald-light.svg#svgFontName") format("svg"); }
 
 button {
   -webkit-border-radius: 0;
