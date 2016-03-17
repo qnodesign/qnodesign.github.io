@@ -190,17 +190,17 @@ aside {
   .headerBackground .videoWrap {
     height: 600px;
     overflow: hidden;
-    background: url(../images/bg.jpg) center no-repeat;
-    background-size: cover; }
+    background: url(../images/poster.jpg) center no-repeat;
+    background-size: cover;
+    opacity: 1; }
     .headerBackground .videoWrap video {
       position: relative;
       top: 50%;
-      -moz-transform: translateY(-54%);
-      -o-transform: translateY(-54%);
-      -ms-transform: translateY(-54%);
-      -webkit-transform: translateY(-54%);
-        -webkit-transform-transform: translateY(-54%);
-      opacity: .6;
+      -moz-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+        -webkit-transform-transform: translateY(-50%);
       min-height: 700px; }
 
 nav ul {
@@ -215,6 +215,7 @@ nav ul {
     font-weight: normal; }
 
 .headerContent {
+  background: rgba(0, 0, 0, 0.4);
   position: absolute;
   top: 0;
   bottom: 0;
@@ -263,12 +264,12 @@ nav ul {
   text-shadow: -1px -1px 0px rgba(0, 0, 0, 0.5), 1px 1px 0px rgba(255, 255, 255, 0.5); }
   .slogan.slogan-animation {
     -webkit-animation-name: slideInOut;
-    -webkit-animation-delay: 5s;
+    -webkit-animation-delay: 0;
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-timing-function: ease-in;
     -webkit-animation-duration: 20s;
     animation-name: slideInOut;
-    animation-delay: 5s;
+    animation-delay: 0;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in;
     animation-duration: 20s;
@@ -374,8 +375,8 @@ nav ul {
       background-image: url(../images/ecommerce.jpg); }
     .contentBox .box4.magento {
       background-image: url(../images/magento.jpg); }
-    .contentBox .box4.web {
-      background-image: url(../images/web.jpg); }
+    .contentBox .box4.crm {
+      background-image: url(../images/crm.jpg); }
     .contentBox .box4.mobile {
       background-image: url(../images/mobile.jpg); }
     .contentBox .box4:after, .contentBox .box4:before {
