@@ -586,26 +586,30 @@ nav ul {
     color: #999;
     margin: 0; }
 
-.eventCarousel.owl-theme .owl-prev, .eventCarousel.owl-theme .owl-next {
+.eventCarousel.owl-theme .owl-nav [class*=owl-], .eventCarousel.owl-theme .owl-nav [class*=owl-]:focus, .eventCarousel.owl-theme .owl-nav [class*=owl-]:hover {
+  background: none;
+  font-size: 0; }
+
+.eventCarousel.owl-theme .owl-nav .owl-prev, .eventCarousel.owl-theme .owl-nav .owl-next {
   background: none; }
-  .eventCarousel.owl-theme .owl-prev:after, .eventCarousel.owl-theme .owl-next:after {
+  .eventCarousel.owl-theme .owl-nav .owl-prev:after, .eventCarousel.owl-theme .owl-nav .owl-next:after {
     font-family: "Glyphicons Halflings";
     font-weight: normal;
     font-size: 20px;
     line-height: normal; }
 
-.eventCarousel.owl-theme .owl-prev {
+.eventCarousel.owl-theme .owl-nav .owl-prev {
   float: left; }
-  .eventCarousel.owl-theme .owl-prev:after {
+  .eventCarousel.owl-theme .owl-nav .owl-prev:after {
     content: '\e079'; }
 
-.eventCarousel.owl-theme .owl-next {
+.eventCarousel.owl-theme .owl-nav .owl-next {
   float: right; }
-  .eventCarousel.owl-theme .owl-next:after {
+  .eventCarousel.owl-theme .owl-nav .owl-next:after {
     content: '\e080'; }
 
 .eventCarousel.owl-theme .owl-dots {
-  line-height: 45px; }
+  line-height: 55px; }
   .eventCarousel.owl-theme .owl-dots .owl-dot.active span {
     background: white; }
 
