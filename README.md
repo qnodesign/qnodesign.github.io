@@ -1,5 +1,5 @@
-## hefelle.me
+## Konrad Hefelle personal page
 
 qnodesign.github.io
 
-Konrad Hefelle personal home page (https://hefelle.me) and blog.
+Konrad Hefelle personal home page (http://qno.hu)
