@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/playmobil/static/css/main.abde3520.css",
-    "main.js": "/playmobil/static/js/main.ee54daa8.js",
+    "main.css": "/playmobil/static/css/main.c31e7f3a.css",
+    "main.js": "/playmobil/static/js/main.690dbde7.js",
     "index.html": "/playmobil/index.html",
-    "main.abde3520.css.map": "/playmobil/static/css/main.abde3520.css.map",
-    "main.ee54daa8.js.map": "/playmobil/static/js/main.ee54daa8.js.map"
+    "main.c31e7f3a.css.map": "/playmobil/static/css/main.c31e7f3a.css.map",
+    "main.690dbde7.js.map": "/playmobil/static/js/main.690dbde7.js.map"
   },
   "entrypoints": [
-    "static/css/main.abde3520.css",
-    "static/js/main.ee54daa8.js"
+    "static/css/main.c31e7f3a.css",
+    "static/js/main.690dbde7.js"
   ]
 }
