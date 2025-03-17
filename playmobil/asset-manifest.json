@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/playmobil/static/css/main.74d5285f.css",
+    "main.js": "/playmobil/static/js/main.aae4b226.js",
+    "static/media/playmobil.svg": "/playmobil/static/media/playmobil.e89959cc50e90e7bd4fd.svg",
+    "index.html": "/playmobil/index.html",
+    "main.74d5285f.css.map": "/playmobil/static/css/main.74d5285f.css.map",
+    "main.aae4b226.js.map": "/playmobil/static/js/main.aae4b226.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.74d5285f.css",
+    "static/js/main.aae4b226.js"
+  ]
+}
