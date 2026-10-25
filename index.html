@@ -1,22 +1,363 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hefelle</title>
-    <style> 
-        body, html {
-            height: 100%;
-        }
-        body { 
-            background-image: url('./images/newbg.jpg');
-            background-size:cover;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Konihaus · Links</title>
+  <meta name="description" content="Alle Konihaus Links: Website, App, Blog und Social Media. Smart Home Installation und Betreuung in der Schweiz.">
+  <meta name="theme-color" content="#1e3628">
+  <link rel="preload" as="image" href="konihaus/bg-oeschinensee-m.webp" type="image/webp" media="(max-width: 719px)">
+  <link rel="preload" as="image" href="konihaus/bg-oeschinensee.webp" type="image/webp" media="(min-width: 720px)">
+  <link rel="canonical" href="https://hefelle.me/">
+  <link rel="icon" type="image/svg+xml" href="konihaus/favicon.svg">
+  <link rel="apple-touch-icon" href="konihaus/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Konihaus · Ihr Zuhause. Intelligent. Privat.">
+  <meta property="og:description" content="Website, App, Blog und Social Media von Konihaus – Smart Home in der Schweiz.">
+  <meta property="og:url" content="https://hefelle.me/">
+  <meta property="og:image" content="https://hefelle.me/konihaus/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" href="konihaus/fonts/outfit-latin-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="konihaus/fonts/cormorant-garamond-latin-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <style>
+    @font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 300 500; font-display: swap;
+      src: url("konihaus/fonts/cormorant-garamond-latin-normal.woff2") format("woff2");
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 300 500; font-display: swap;
+      src: url("konihaus/fonts/cormorant-garamond-latin-ext-normal.woff2") format("woff2");
+      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+    @font-face { font-family: "Cormorant Garamond"; font-style: italic; font-weight: 300 500; font-display: swap;
+      src: url("konihaus/fonts/cormorant-garamond-latin-italic.woff2") format("woff2"); }
+    @font-face { font-family: "Outfit"; font-style: normal; font-weight: 300 600; font-display: swap;
+      src: url("konihaus/fonts/outfit-latin-normal.woff2") format("woff2");
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: "Outfit"; font-style: normal; font-weight: 300 600; font-display: swap;
+      src: url("konihaus/fonts/outfit-latin-ext-normal.woff2") format("woff2");
+      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+    :root {
+      --forest: #2a4a35;
+      --forest-deep: #1e3628;
+      --forest-mid: #3d6b4f;
+      --forest-light: #9fc77f;
+      --parchment: #f7f4ed;
+      --cream: #ede9df;
+      --amber: #c47c2b;
+      --amber-warm: #e8c06a;
+      --ink: #1a1916;
+      --ink-3: #6a6860;
+      --rule-inv: rgba(247, 244, 237, .14);
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --sans: "Outfit", system-ui, -apple-system, "Segoe UI", sans-serif;
+      --ease: cubic-bezier(.25, .46, .45, .94);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      min-height: 100vh; min-height: 100dvh;
+      background: var(--forest-deep);
+      color: var(--parchment);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+      isolation: isolate;
+    }
+    /* Swiss landscape (Oeschinensee) — fixed layer so it also stays put on iOS */
+    body::before, body::after { content: ""; position: fixed; inset: 0; pointer-events: none; }
+    body::before {
+      z-index: -2;
+      background: var(--forest-deep) url("konihaus/bg-oeschinensee-m.jpg") 58% 40% / cover no-repeat;
+      background-image: image-set(url("konihaus/bg-oeschinensee-m.webp") type("image/webp"), url("konihaus/bg-oeschinensee-m.jpg") type("image/jpeg"));
+    }
+    body::after {
+      z-index: -1;
+      background:
+        linear-gradient(180deg, rgba(30,54,40,.45) 0%, rgba(30,54,40,.62) 30%, rgba(30,54,40,.86) 70%, rgba(22,40,30,.94) 100%),
+        radial-gradient(90% 60% at 50% 0%, rgba(159,199,127,.10), transparent 60%);
+    }
+    @media (min-width: 720px) {
+      body::before {
+        background-position: 50% 45%;
+        background-image: url("konihaus/bg-oeschinensee.jpg");
+        background-image: image-set(url("konihaus/bg-oeschinensee.webp") type("image/webp"), url("konihaus/bg-oeschinensee.jpg") type("image/jpeg"));
+      }
+      body::after {
+        background:
+          radial-gradient(42% 120% at 50% 50%, rgba(22,40,30,.78) 0%, rgba(22,40,30,.55) 60%, rgba(22,40,30,.35) 100%),
+          linear-gradient(180deg, rgba(30,54,40,.25) 0%, rgba(30,54,40,.55) 100%);
+      }
+    }
+    a { color: inherit; }
+    .wrap {
+      width: 100%; max-width: 480px; margin: 0 auto;
+      padding: max(28px, env(safe-area-inset-top)) 16px max(28px, env(safe-area-inset-bottom));
+      display: flex; flex-direction: column; min-height: 100vh; min-height: 100dvh;
+    }
+
+    /* top bar */
+    .top { display: flex; justify-content: flex-end; }
+    .lang { display: inline-flex; border: 1px solid rgba(247,244,237,.25); background: rgba(22,40,30,.4); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border-radius: 999px; padding: 3px; }
+    .lang button {
+      font: 500 12px/1 var(--sans); letter-spacing: .08em; color: rgba(247,244,237,.65);
+      background: none; border: 0; border-radius: 999px; padding: 7px 11px; cursor: pointer;
+      transition: background .2s var(--ease), color .2s var(--ease);
+    }
+    .lang button[aria-pressed="true"] { background: var(--parchment); color: var(--forest-deep); }
+    .lang button:focus-visible { outline: 2px solid var(--amber-warm); outline-offset: 2px; }
+
+    /* header */
+    header { text-align: center; padding: 18px 0 30px; text-shadow: 0 1px 12px rgba(0,0,0,.35); }
+    .mark { width: 88px; height: 88px; margin: 0 auto 18px; display: block; filter: drop-shadow(0 10px 24px rgba(0,0,0,.25)); }
+    .wordmark { font: 400 34px/1 var(--sans); letter-spacing: -0.055em; }
+    .tagline { margin-top: 14px; font: 400 26px/1.15 var(--serif); color: var(--cream); }
+    .tagline em { font-style: italic; color: var(--amber-warm); }
+    .sub { margin-top: 10px; font-size: 14px; color: rgba(247,244,237,.82); letter-spacing: .01em; }
+
+    /* links */
+    .label {
+      font: 500 11px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase;
+      color: rgba(247,244,237,.7); margin: 4px 4px 12px;
+    }
+    .links { list-style: none; display: grid; gap: 12px; margin-bottom: 28px; }
+    .card {
+      display: flex; align-items: center; gap: 14px;
+      padding: 14px 16px 14px 14px; border-radius: 18px;
+      background: var(--parchment); color: var(--ink); text-decoration: none;
+      box-shadow: 0 1px 0 rgba(255,255,255,.5) inset, 0 8px 22px rgba(0,0,0,.18);
+      transition: transform .25s var(--ease), box-shadow .25s var(--ease), background .25s var(--ease);
+    }
+    .card:hover { transform: translateY(-2px); box-shadow: 0 1px 0 rgba(255,255,255,.5) inset, 0 14px 30px rgba(0,0,0,.26); }
+    .card:active { transform: translateY(0) scale(.99); }
+    .card:focus-visible { outline: 3px solid var(--amber-warm); outline-offset: 3px; }
+    .ico {
+      flex: none; width: 44px; height: 44px; border-radius: 12px;
+      display: grid; place-items: center; background: var(--forest); color: var(--parchment);
+    }
+    .ico svg { width: 22px; height: 22px; }
+    .txt { flex: 1; min-width: 0; }
+    .ttl, .dsc, .url { display: block; }
+    .ttl { display: flex; }
+    .ttl { display: flex; align-items: center; gap: 8px; font: 500 16px/1.25 var(--sans); letter-spacing: -0.01em; }
+    .dsc { font-size: 13px; color: var(--ink-3); margin-top: 2px; }
+    .url { font-size: 12px; color: var(--forest-mid); margin-top: 3px; font-weight: 400; }
+    .badge {
+      font: 600 10px/1 var(--sans); letter-spacing: .08em; text-transform: uppercase;
+      background: var(--amber); color: #fff; padding: 4px 7px; border-radius: 999px;
+    }
+    .arrow { flex: none; width: 18px; height: 18px; color: var(--ink-3); transition: transform .25s var(--ease), color .25s var(--ease); }
+    .card:hover .arrow { transform: translateX(3px); color: var(--forest); }
+
+    .card.feature { background: var(--forest); color: var(--parchment); border: 1px solid rgba(159,199,127,.28); }
+    .card.feature .ico { background: var(--amber); }
+    .card.feature .dsc { color: rgba(247,244,237,.72); }
+    .card.feature .url { color: var(--forest-light); }
+    .card.feature .arrow { color: rgba(247,244,237,.6); }
+    .card.feature:hover .arrow { color: var(--amber-warm); }
+
+    /* contact */
+    .contact { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 28px; }
+    .pill {
+      display: flex; align-items: center; justify-content: center; gap: 9px;
+      padding: 13px 12px; border-radius: 14px; text-decoration: none;
+      border: 1px solid rgba(247,244,237,.22); background: rgba(22,40,30,.45);
+      -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+      font: 400 14px/1.2 var(--sans); transition: background .2s var(--ease), border-color .2s var(--ease);
+    }
+    .pill svg { width: 18px; height: 18px; flex: none; }
+    .pill:hover { background: rgba(247,244,237,.11); border-color: rgba(247,244,237,.3); }
+    .pill:focus-visible { outline: 2px solid var(--amber-warm); outline-offset: 2px; }
+
+    /* socials */
+    .socials { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; list-style: none; margin-bottom: 8px; }
+    .socials a {
+      width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center;
+      border: 1px solid rgba(247,244,237,.22); background: rgba(22,40,30,.45);
+      -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+      transition: background .2s var(--ease), color .2s var(--ease), transform .2s var(--ease);
+    }
+    .socials a:hover { background: var(--parchment); color: var(--forest-deep); transform: translateY(-2px); }
+    .socials a:focus-visible { outline: 2px solid var(--amber-warm); outline-offset: 2px; }
+    .socials svg { width: 20px; height: 20px; }
+
+    footer { margin-top: auto; padding-top: 32px; text-align: center; font-size: 12px; color: rgba(247,244,237,.65); }
+    .credit { display: block; margin-top: 6px; font-size: 11px; opacity: .75; }
+    footer a { text-decoration: none; border-bottom: 1px solid transparent; }
+    footer a:hover { border-color: currentColor; }
+    footer .dot { margin: 0 6px; }
+
+    .reveal { opacity: 0; transform: translateY(10px); animation: in .6s var(--ease) forwards; }
+    @keyframes in { to { opacity: 1; transform: none; } }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { animation: none; opacity: 1; transform: none; }
+      .card, .arrow, .socials a { transition: none; }
+    }
+    @media (max-width: 360px) {
+      .contact { grid-template-columns: 1fr; }
+      .tagline { font-size: 23px; }
+    }
+  </style>
 </head>
-<body>   
+<body>
+  <!-- icon sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></symbol>
+      <symbol id="i-pen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16v4z"/><path d="M13.5 6.5l4 4"/></symbol>
+      <symbol id="i-hub" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11 12 4l8 7v8a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 19z"/><circle cx="12" cy="14" r="2"/><path d="M12 12V9.5M10.3 15l-2 1.3M13.7 15l2 1.3"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></symbol>
+      <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 19.5 5.6 16A8 8 0 1 1 8.2 18.6z"/><path d="M9.2 9.3c.2 2.4 2.6 4.9 5.2 5.3l1.1-1.2-1.6-.9-.7.6c-.9-.4-1.9-1.3-2.4-2.3l.6-.7-.8-1.7z" stroke-width="1.2"/></symbol>
+      <symbol id="i-ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".9" fill="currentColor" stroke="none"/></symbol>
+      <symbol id="i-fb" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.6-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4V10.5H8v3h2.5V21z"/></symbol>
+      <symbol id="i-in" viewBox="0 0 24 24" fill="currentColor"><path d="M6.9 8.8H3.9V20h3zM5.4 7.4a1.75 1.75 0 1 0 0-3.5 1.75 1.75 0 0 0 0 3.5zM20.1 13.6c0-3-1.6-5-4.3-5-1.5 0-2.5.8-2.9 1.6V8.8H10V20h3v-5.8c0-1.6.6-2.8 2.1-2.8s1.9 1.3 1.9 2.9V20h3.1z"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24" fill="currentColor"><path d="M17.3 3.5h3l-6.6 7.5 7.8 9.5h-6.1l-4.8-5.9-5.4 5.9h-3l7.1-8L2 3.5h6.2l4.3 5.4zm-1.1 15.3h1.7L7.9 5.1H6.1z"/></symbol>
+      <symbol id="i-yt" viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 7.2a2.6 2.6 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.6 2.6 0 0 0 2.4 7.2 27 27 0 0 0 2 12a27 27 0 0 0 .4 4.8 2.6 2.6 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.6 2.6 0 0 0 1.8-1.8A27 27 0 0 0 22 12a27 27 0 0 0-.4-4.8zM10 15V9l5.2 3z"/></symbol>
+    </defs>
+  </svg>
+
+  <div class="wrap">
+    <div class="top">
+      <div class="lang" role="group" aria-label="Sprache / Language">
+        <button type="button" data-set-lang="de" aria-pressed="true">DE</button>
+        <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+
+    <header class="reveal">
+      <svg class="mark" viewBox="0 0 512 512" role="img" aria-label="Konihaus">
+        <rect width="512" height="512" rx="112" fill="#2a4a35"/>
+        <rect x="1.5" y="1.5" width="509" height="509" rx="110.5" fill="none" stroke="rgba(247,244,237,.16)" stroke-width="3"/>
+        <g transform="translate(104 90) scale(1.72)" fill="none" stroke="#f7f4ed" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M24 82 L24 148 C24 156.8 31.2 164 40 164 H62"/>
+          <path d="M24 82 L88 24 L152 82"/>
+          <path d="M152 82 V148 C152 156.8 144.8 164 136 164 H114"/>
+          <circle cx="70" cy="112" r="9.5" fill="#c47c2b" stroke="none"/>
+          <circle cx="108" cy="112" r="9.5" fill="#f7f4ed" stroke="none"/>
+        </g>
+      </svg>
+      <h1 class="wordmark">konihaus</h1>
+      <p class="tagline" data-i18n-html="tagline">Ihr Zuhause. <em>Intelligent.</em> Privat.</p>
+      <p class="sub" data-i18n="sub">Smart Home Installation &amp; Betreuung · Schweiz</p>
+    </header>
+
+    <main>
+      <p class="label reveal" style="animation-delay:.05s" data-i18n="l_explore">Entdecken</p>
+      <ul class="links">
+        <li class="reveal" style="animation-delay:.08s">
+          <a class="card" href="https://konihaus.ch">
+            <span class="ico"><svg><use href="#i-globe"/></svg></span>
+            <span class="txt">
+              <span class="ttl" data-i18n="web_t">Website</span>
+              <span class="dsc" data-i18n="web_d">Pakete, Ablauf und kostenloses Erstgespräch</span>
+              <span class="url">konihaus.ch</span>
+            </span>
+            <svg class="arrow"><use href="#i-arrow"/></svg>
+          </a>
+        </li>
+        <li class="reveal" style="animation-delay:.12s">
+          <a class="card feature" href="https://app.konihaus.ch">
+            <span class="ico"><svg><use href="#i-phone"/></svg></span>
+            <span class="txt">
+              <span class="ttl"><span data-i18n="app_t">Konihaus App</span><span class="badge" data-i18n="new">Neu</span></span>
+              <span class="dsc" data-i18n="app_d">Ihr ganzes Zuhause in einer App</span>
+              <span class="url">app.konihaus.ch</span>
+            </span>
+            <svg class="arrow"><use href="#i-arrow"/></svg>
+          </a>
+        </li>
+        <li class="reveal" style="animation-delay:.16s">
+          <a class="card" href="https://blog.konihaus.ch">
+            <span class="ico"><svg><use href="#i-pen"/></svg></span>
+            <span class="txt">
+              <span class="ttl" data-i18n="blog_t">Blog</span>
+              <span class="dsc" data-i18n="blog_d">Geschichten, Tipps und Ideen rund ums Smart Home</span>
+              <span class="url">blog.konihaus.ch</span>
+            </span>
+            <svg class="arrow"><use href="#i-arrow"/></svg>
+          </a>
+        </li>
+        <li class="reveal" style="animation-delay:.2s">
+          <a class="card" href="https://konihaus.ch/home-assistant-schweiz" data-href-en="https://konihaus.ch/home-assistant-switzerland">
+            <span class="ico"><svg><use href="#i-hub"/></svg></span>
+            <span class="txt">
+              <span class="ttl" data-i18n="ha_t">Home Assistant Schweiz</span>
+              <span class="dsc" data-i18n="ha_d">Lokal, herstellerunabhängig, privat</span>
+            </span>
+            <svg class="arrow"><use href="#i-arrow"/></svg>
+          </a>
+        </li>
+      </ul>
+
+      <p class="label reveal" style="animation-delay:.24s" data-i18n="l_contact">Kontakt</p>
+      <div class="contact reveal" style="animation-delay:.26s">
+        <a class="pill" href="https://wa.me/41782379685"><svg><use href="#i-chat"/></svg>WhatsApp</a>
+        <a class="pill" href="mailto:hallo@konihaus.ch"><svg><use href="#i-mail"/></svg>hallo@konihaus.ch</a>
+      </div>
+
+      <p class="label reveal" style="animation-delay:.3s; text-align:center" data-i18n="l_follow">Folgen</p>
+      <ul class="socials reveal" style="animation-delay:.32s">
+        <li><a href="https://www.instagram.com/ch.konihaus/" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a></li>
+        <li><a href="https://www.facebook.com/konihaus.ch" aria-label="Facebook"><svg><use href="#i-fb"/></svg></a></li>
+        <li><a href="https://www.linkedin.com/company/konihaus" aria-label="LinkedIn"><svg><use href="#i-in"/></svg></a></li>
+        <li><a href="https://x.com/konihaus" aria-label="X"><svg><use href="#i-x"/></svg></a></li>
+        <li><a href="https://www.youtube.com/@Konihaus" aria-label="YouTube"><svg><use href="#i-yt"/></svg></a></li>
+      </ul>
+    </main>
+
+    <footer>
+      <span>© <span id="yr">2026</span> Konihaus · Zürich</span><span class="dot">·</span><a href="https://konihaus.ch/impressum" data-i18n="imprint">Impressum</a><span class="dot">·</span><a href="https://konihaus.ch/datenschutz" data-i18n="privacy">Datenschutz</a>
+      <span class="credit">Oeschinensee, Kandersteg</span>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      var T = {
+        de: {
+          tagline: 'Ihr Zuhause. <em>Intelligent.</em> Privat.',
+          sub: 'Smart Home Installation & Betreuung · Schweiz',
+          l_explore: 'Entdecken', l_contact: 'Kontakt', l_follow: 'Folgen',
+          web_t: 'Website', web_d: 'Pakete, Ablauf und kostenloses Erstgespräch',
+          app_t: 'Konihaus App', app_d: 'Ihr ganzes Zuhause in einer App', new: 'Neu',
+          blog_t: 'Blog', blog_d: 'Geschichten, Tipps und Ideen rund ums Smart Home',
+          ha_t: 'Home Assistant Schweiz', ha_d: 'Lokal, herstellerunabhängig, privat',
+          imprint: 'Impressum', privacy: 'Datenschutz'
+        },
+        en: {
+          tagline: 'Your home. <em>Intelligent.</em> Private.',
+          sub: 'Smart home installation & care · Switzerland',
+          l_explore: 'Explore', l_contact: 'Contact', l_follow: 'Follow',
+          web_t: 'Website', web_d: 'Packages, process and a free first call',
+          app_t: 'Konihaus App', app_d: 'Your whole home in one app', new: 'New',
+          blog_t: 'Blog', blog_d: 'Stories, tips and ideas about the smart home',
+          ha_t: 'Home Assistant Switzerland', ha_d: 'Local, vendor-independent, private',
+          imprint: 'Imprint', privacy: 'Privacy'
+        }
+      };
+      function get() { try { return localStorage.getItem('kh-lang'); } catch (e) { return null; } }
+      function save(l) { try { localStorage.setItem('kh-lang', l); } catch (e) {} }
+      function apply(l) {
+        var t = T[l] || T.de;
+        document.documentElement.lang = l;
+        document.querySelectorAll('[data-i18n]').forEach(function (el) { var k = el.getAttribute('data-i18n'); if (t[k]) el.textContent = t[k]; });
+        document.querySelectorAll('[data-i18n-html]').forEach(function (el) { var k = el.getAttribute('data-i18n-html'); if (t[k]) el.innerHTML = t[k]; });
+        document.querySelectorAll('[data-href-en]').forEach(function (el) {
+          if (!el.dataset.hrefDe) el.dataset.hrefDe = el.getAttribute('href');
+          el.setAttribute('href', l === 'en' ? el.dataset.hrefEn : el.dataset.hrefDe);
+        });
+        document.querySelectorAll('[data-set-lang]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.setLang === l)); });
+      }
+      var q = new URLSearchParams(location.search).get('lang');
+      var initial = (q === 'en' || q === 'de') ? q : (get() || ((navigator.language || 'de').toLowerCase().indexOf('en') === 0 ? 'en' : 'de'));
+      apply(initial);
+      document.querySelectorAll('[data-set-lang]').forEach(function (b) {
+        b.addEventListener('click', function () { save(b.dataset.setLang); apply(b.dataset.setLang); });
+      });
+      document.getElementById('yr').textContent = new Date().getFullYear();
+    })();
+  </script>
 </body>
 </html>
