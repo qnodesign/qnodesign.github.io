@@ -109,7 +109,7 @@
 
     /* header */
     header { text-align: center; padding: 18px 0 20px; text-shadow: 0 1px 12px rgba(0,0,0,.35); }
-    .mark { width: 88px; height: 88px; margin: 0 auto 18px; display: block; filter: drop-shadow(0 10px 24px rgba(0,0,0,.25)); }
+    .mark { width: 84px; height: 84px; margin: 0 auto 20px; display: block; overflow: visible; filter: drop-shadow(0 4px 14px rgba(0,0,0,.35)); }
     .wordmark { font: 400 34px/1 var(--sans); letter-spacing: -0.055em; }
     .tagline { margin-top: 14px; font: 400 26px/1.15 var(--serif); color: var(--cream); }
     .tagline em { font-style: italic; color: var(--amber-warm); }
@@ -227,16 +227,10 @@
     </div>
 
     <header class="reveal">
-      <svg class="mark" viewBox="0 0 512 512" role="img" aria-label="Konihaus">
-        <rect width="512" height="512" rx="112" fill="#2a4a35"/>
-        <rect x="1.5" y="1.5" width="509" height="509" rx="110.5" fill="none" stroke="rgba(247,244,237,.16)" stroke-width="3"/>
-        <g transform="translate(104 90) scale(1.72)" fill="none" stroke="#f7f4ed" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M24 82 L24 148 C24 156.8 31.2 164 40 164 H62"/>
-          <path d="M24 82 L88 24 L152 82"/>
-          <path d="M152 82 V148 C152 156.8 144.8 164 136 164 H114"/>
-          <circle cx="70" cy="112" r="9.5" fill="#c47c2b" stroke="none"/>
-          <circle cx="108" cy="112" r="9.5" fill="#f7f4ed" stroke="none"/>
-        </g>
+      <svg class="mark" viewBox="0 0 320 320" role="img" aria-label="Konihaus">
+        <path d="M101 299H49A30 30 0 0 1 19 269V149L159 27L299 149V269A30 30 0 0 1 269 299H217" fill="none" stroke="#F7F4ED" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="111" cy="197" r="20" fill="#F7F4ED"/>
+        <circle cx="207" cy="197" r="20" fill="#C47C2B"/>
       </svg>
       <h1 class="wordmark">konihaus</h1>
       <p class="tagline" data-i18n-html="tagline">Ihr Zuhause. <em>Intelligent.</em> Privat.</p>

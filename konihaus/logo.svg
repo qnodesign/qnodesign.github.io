@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320" role="img" aria-labelledby="logo-title logo-desc">
+  <title id="logo-title">Konihaus logo</title>
+  <desc id="logo-desc">Open-base house outline in cream with two dots; the right dot is copper.</desc>
+  <!-- House outline: 20 px stroke, round caps and joins, 30 px bottom corners, open base (gap x 101-217) -->
+  <path d="M101 299H49A30 30 0 0 1 19 269V149L159 27L299 149V269A30 30 0 0 1 269 299H217"
+        fill="none" stroke="#F7F4ED" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Dots: r = 20, centers 96 px apart -->
+  <circle cx="111" cy="197" r="20" fill="#F7F4ED"/>
+  <circle cx="207" cy="197" r="20" fill="#C47C2B"/>
+</svg>
