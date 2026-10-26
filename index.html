@@ -226,6 +226,23 @@
       .contact { grid-template-columns: 1fr; }
       .tagline { font-size: 23px; }
     }
+
+    /* Cookie consent */
+    .cc { position: fixed; z-index: 50; left: 50%; bottom: 16px; transform: translateX(-50%); width: min(440px, calc(100vw - 32px));
+      background: var(--parchment); color: var(--ink); border-radius: 16px; padding: 18px 18px 14px;
+      box-shadow: 0 18px 50px rgba(0,0,0,.4); font-family: var(--sans); }
+    .cc[hidden] { display: none; }
+    @media (min-width: 900px) { .cc { left: auto; right: 24px; bottom: 24px; transform: none; width: 420px; } }
+    .cc h2 { font: 500 22px/1.15 var(--serif); margin: 0 0 6px; }
+    .cc p { font-size: 13px; line-height: 1.55; color: var(--ink-3); margin: 0 0 14px; }
+    .cc p a { color: var(--forest); }
+    .cc-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .cc-btn { font: 500 13px/1.2 var(--sans); padding: 13px 10px; border-radius: 10px; border: 1.5px solid var(--forest); cursor: pointer; min-height: 44px; }
+    .cc-btn--p { background: var(--forest); color: var(--parchment); }
+    .cc-btn--s { background: transparent; color: var(--forest); }
+    .cc-btn:focus-visible { outline: 3px solid var(--amber-warm); outline-offset: 2px; }
+    footer button.cc-open { background: none; border: 0; border-bottom: 1px solid transparent; color: inherit; font: inherit; cursor: pointer; padding: 0; }
+    footer button.cc-open:hover { border-color: currentColor; }
   </style>
 </head>
 <body>
@@ -332,10 +349,54 @@
     </main>
 
     <footer>
-      <span>© <span id="yr">2026</span> Konihaus · Zürich</span><span class="dot">·</span><a href="https://konihaus.ch/impressum" data-i18n="imprint">Impressum</a><span class="dot">·</span><a href="https://konihaus.ch/datenschutz" data-i18n="privacy">Datenschutz</a>
+      <span>© <span id="yr">2026</span> Konihaus · Zürich</span><span class="dot">·</span><a href="https://konihaus.ch/impressum" data-i18n="imprint">Impressum</a><span class="dot">·</span><a href="https://konihaus.ch/datenschutz" data-i18n="privacy">Datenschutz</a><span class="dot">·</span><button type="button" class="cc-open" id="cc-open" data-i18n="cc_open">Cookie-Einstellungen</button>
       <span class="credit">Oeschinensee, Kandersteg</span>
     </footer>
   </div>
+
+  <div class="cc" id="cc" role="dialog" aria-labelledby="cc-t" hidden>
+    <h2 id="cc-t" data-i18n="cc_t">Diese Seite verwendet Cookies</h2>
+    <p><span data-i18n="cc_d">Mit Ihrer Zustimmung nutzen wir Statistik-Cookies (Google Analytics), um zu verstehen, wie diese Seite verwendet wird. Es werden keine Marketing-Cookies eingesetzt.</span> <a href="https://konihaus.ch/datenschutz" data-i18n="privacy">Datenschutz</a></p>
+    <div class="cc-actions">
+      <button type="button" class="cc-btn cc-btn--p" id="cc-all" data-i18n="cc_all">Alle zulassen</button>
+      <button type="button" class="cc-btn cc-btn--s" id="cc-no" data-i18n="cc_no">Nur notwendige</button>
+    </div>
+  </div>
+  <script>
+    /* Consent-gated Google Analytics. Nothing from Google is loaded and no cookie is set until "Allow all".
+       Choice stored in localStorage ("kh_links_consent"), valid 12 months; changeable via the footer link. */
+    (function () {
+      var GA_ID = 'G-D402TQJVEV', KEY = 'kh_links_consent', MAX = 365 * 864e5, loaded = false;
+      function read() { try { var c = JSON.parse(localStorage.getItem(KEY)); return c && Date.now() - c.ts < MAX ? c : null; } catch (e) { return null; } }
+      function write(stats) { try { localStorage.setItem(KEY, JSON.stringify({ ts: Date.now(), stats: stats })); } catch (e) {} }
+      function loadGA() {
+        if (loaded) return; loaded = true;
+        var s = document.createElement('script'); s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID; document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || []; window.gtag = function () { dataLayer.push(arguments); };
+        gtag('js', new Date()); gtag('config', GA_ID);
+      }
+      function stopGA() {
+        window['ga-disable-' + GA_ID] = true;
+        ['_ga', '_ga_' + GA_ID.replace('G-', '')].forEach(function (n) {
+          var h = location.hostname.split('.'), d = [location.hostname];
+          for (var i = 1; i < h.length - 1; i++) d.push('.' + h.slice(i).join('.'));
+          d.forEach(function (dom) { document.cookie = n + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=' + dom; });
+          document.cookie = n + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
+        });
+      }
+      var box = document.getElementById('cc');
+      function show() { box.hidden = false; document.getElementById('cc-all').focus({ preventScroll: true }); }
+      function decide(stats) {
+        write(stats); box.hidden = true;
+        if (stats) { window['ga-disable-' + GA_ID] = false; loadGA(); } else stopGA();
+      }
+      document.getElementById('cc-all').addEventListener('click', function () { decide(true); });
+      document.getElementById('cc-no').addEventListener('click', function () { decide(false); });
+      document.getElementById('cc-open').addEventListener('click', show);
+      var c = read();
+      if (!c) show(); else if (c.stats) loadGA();
+    })();
+  </script>
 
   <script>
     /* Latest blog posts -> Blog card. Source: https://blog.konihaus.ch/latest.json (built by the blog).
@@ -420,7 +481,10 @@
           app_t: 'Konihaus App', app_d: 'Ihr ganzes Zuhause in einer App', new: 'Neu',
           blog_t: 'Blog', blog_d: 'Geschichten, Tipps und Ideen rund ums Smart Home',
           ha_t: 'Home Assistant Schweiz', ha_d: 'Lokal, herstellerunabhängig, privat',
-          imprint: 'Impressum', privacy: 'Datenschutz'
+          imprint: 'Impressum', privacy: 'Datenschutz',
+          cc_open: 'Cookie-Einstellungen', cc_t: 'Diese Seite verwendet Cookies',
+          cc_d: 'Mit Ihrer Zustimmung nutzen wir Statistik-Cookies (Google Analytics), um zu verstehen, wie diese Seite verwendet wird. Es werden keine Marketing-Cookies eingesetzt.',
+          cc_all: 'Alle zulassen', cc_no: 'Nur notwendige'
         },
         en: {
           tagline: 'Your home. <em>Intelligent.</em> Private.',
@@ -430,7 +494,10 @@
           app_t: 'Konihaus App', app_d: 'Your whole home in one app', new: 'New',
           blog_t: 'Blog', blog_d: 'Stories, tips and ideas about the smart home',
           ha_t: 'Home Assistant Switzerland', ha_d: 'Local, vendor-independent, private',
-          imprint: 'Imprint', privacy: 'Privacy'
+          imprint: 'Imprint', privacy: 'Privacy',
+          cc_open: 'Cookie settings', cc_t: 'This page uses cookies',
+          cc_d: 'With your consent we use statistics cookies (Google Analytics) to understand how this page is used. We do not use marketing cookies.',
+          cc_all: 'Allow all', cc_no: 'Necessary only'
         }
       };
       function get() { try { return localStorage.getItem('kh-lang'); } catch (e) { return null; } }
