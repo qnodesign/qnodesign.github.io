@@ -400,7 +400,7 @@
 
   <script>
     /* Latest blog posts -> Blog card. Source: https://blog.konihaus.ch/latest.json (built by the blog).
-       A post counts as live from its date + time (Swiss time, default 07:00), like on the blog itself.
+       A post counts as live from its date + time (Swiss time, default 09:00), like on the blog itself.
        Any failure keeps the plain Blog card. */
     (function () {
       var FEED = 'https://blog.konihaus.ch/latest.json', NEW_DAYS = 7, MAX_OLDER = 2;
@@ -417,7 +417,7 @@
       }
       function stamp(x) {
         var m = /^(\d{1,2}):(\d{2})$/.exec(String(x.tm || '').trim());
-        var at = m && +m[1] < 24 && +m[2] < 60 ? (m[1].length < 2 ? '0' : '') + m[1] + ':' + m[2] : '07:00';
+        var at = m && +m[1] < 24 && +m[2] < 60 ? (m[1].length < 2 ? '0' : '') + m[1] + ':' + m[2] : '09:00';
         return x.d + 'T' + at;
       }
       function dayDiff(a, b) { return Math.round((Date.parse(a + 'T00:00:00Z') - Date.parse(b + 'T00:00:00Z')) / 864e5); }
